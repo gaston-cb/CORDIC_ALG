@@ -9,9 +9,9 @@ end coordic_recursivo_tb;
 
 architecture sim of coordic_recursivo_tb is
    constant N_tb:natural := 18 ; 
-   signal x0_tb : std_logic_vector(N_tb -1 downto 0):=std_logic_vector(to_signed(13,N_tb)) ;  
-   signal y0_tb : std_logic_vector(N_tb -1 downto 0):=std_logic_vector(to_signed(1,N_tb)) ; 
-   signal z0_tb : std_logic_vector(N_tb -1 downto 0):=std_logic_vector(to_signed(1,N_tb)) ; 
+   signal x0_tb : std_logic_vector(N_tb -1 downto 0):="001001101101110100"; --std_logic_vector(to_signed(13,N_tb)) ;  
+   signal y0_tb : std_logic_vector(N_tb -1 downto 0):="000000000000000000"; --std_logic_vector(to_signed(1,N_tb)) ; 
+   signal z0_tb : std_logic_vector(N_tb -1 downto 0):="001100100100001111"; --std_logic_vector(to_signed(1,N_tb)) ; 
    signal xn_tb : std_logic_vector(N_tb -1 downto 0) ; 
    signal yn_tb : std_logic_vector(N_tb -1 downto 0) ; 
    signal zn_tb : std_logic_vector(N_tb -1 downto 0) ;  
