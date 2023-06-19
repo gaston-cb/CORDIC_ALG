@@ -31,7 +31,6 @@ def coordic(x0,y0,z0,iter):
 
 def real2bin(realnumber):
     binary = "0"
-    print(realnumber) 
     ca2 = False
     n_real = float(realnumber)
     if n_real <0: 
@@ -82,7 +81,6 @@ def bin2real(binnumber):
         inverse_transform = inverse_transform + int(i)*2**index_count    
         index_count = index_count - 1; 
 
-    print (inverse_transform)
     if (negative ==True): 
         inverse_transform = -1*inverse_transform
     return str(inverse_transform)  
