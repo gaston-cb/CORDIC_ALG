@@ -52,7 +52,7 @@ architecture rtl of coordic_recursivo is
     signal FA_select_op:std_logic; 
 
 
-
+    --signal rst_register:std_logic ; 
 ------------------------------------------------------------------------     
 --
    -- signal inputZReg:std_logic_vector(N-1 downto 0) ; 
@@ -61,8 +61,7 @@ begin
     Xn <= inputXnmux  ;
     Yn <= inputYnmux  ;
     Zn <= inputZnmux  ; 
---    inputYnmux <=Yn ; 
---    inputZnmux <=Zn ;
+   -- rst_register <= not  select_input_mux; 
 -------------------------------MULTIPLEXORES DE ENTRADA ------------------------------------------------------------
     MUXXIN: entity work.muxInputN
         generic map(
@@ -106,7 +105,7 @@ begin
         )
         port map(
             clk => clk_in, 
-            rst => rst_in, 
+            rst => rst_in , 
             ena =>'1', 
             D => inputXReg,
             Q => inputXFA 
@@ -130,13 +129,14 @@ begin
         )
         port map(
             clk => clk_in, 
-            rst => rst_in, 
+            rst => rst_in , 
             ena =>'1', 
             D => inputZReg,
             Q => inputZFA 
         ); 
 
 --------------------------FULL_ADDER_XYZ---------------------------------------------------------------
+    FA_select_op <= inputZFA(N-1) ; 
     FAZ:entity work.sumador_restador_Nbits
     generic map(
         N=> N
@@ -149,7 +149,6 @@ begin
         c_out => carry_out_z
     );
 
-    FA_select_op <= inputZFA(N-1) ; 
     FAY:entity work.sumador_restador_Nbits
     generic map(
         N=> N
@@ -180,9 +179,9 @@ begin
             widht_input => N 
         )
         port map(
-            d =>  inputXFA,
+            d =>  inputYFA,
             sel=> sal_comparador, 
-            q=>   inputXFASHIFT
+            q=>   inputYFASHIFT
         ) ; 
     FAXSHIFT: entity work.barrel_shifter_arit
         generic map(
@@ -190,9 +189,9 @@ begin
             widht_input => N 
         )
         port map(
-            d =>  inputYFA,
+            d =>  inputXFA,
             sel=> sal_comparador, 
-            q=>   inputYFASHIFT
+            q=>   inputXFASHIFT
         ) ; 
 
 

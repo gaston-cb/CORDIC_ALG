@@ -7,7 +7,7 @@
 """
 import math 
 ITERACIONES = 10 
-z0 = math.pi/4 
+z0 = math.atan(2**-2) 
 y0 = 0 
 x0 = 1 
 
@@ -112,9 +112,9 @@ def compute_coordic(x0,y0,z0):
 
 for i in range(0,ITERACIONES):
     x0 =  x0*math.sqrt(1+2**(-2*i)) 
-    print (x0) 
+    #print (x0) 
 
-print (z0)
+print (1/x0)
 l1 = compute_coordic(1/x0,y0,z0)
 
 print (f'{l1}')
@@ -129,21 +129,21 @@ index_count = 1 ;
 inverse_transform = 0 ; 
 inverse_transform_y = 0 ; 
 inverse_transform_z = 0 ; 
-stringxbin = "001010101011111101" # 0AAFD  
+# stringxbin = "000011101011001011" # 0AAFD  
+                    
+# stringybin = "000111000001000000" 
              
-stringybin = "000111000001000000" 
-             
-print (len(stringxbin))
-print (len(stringybin))
+#print (len(stringxbin))
+#print (len(stringybin))
 
 
-for i in stringxbin: 
+for i in l1[0]: 
     inverse_transform = inverse_transform + int(i)*2**index_count 
 #    print(f'cuenta: i*2**{index_count}:={inverse_transform}')
     index_count = index_count -1 
 
 index_count = 1 
-for i in stringybin: 
+for i in l1[1]: 
     inverse_transform_y = inverse_transform_y + int(i)*2**index_count 
     index_count = index_count -1 
 

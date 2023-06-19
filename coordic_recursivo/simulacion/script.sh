@@ -13,7 +13,7 @@ ghdl -s ../../sum1bit/fuentes/sumador1bit.vhd ../../sumRestNbits/fuentes/sumador
         ../fuentes/coordic_recursivo.vhd  \
         ../fuentes/coordic_recursivo_tb.vhd
 ghdl -e coordic_recursivo_tb 
-ghdl -r coordic_recursivo_tb --vcd=coordic_recursivo_tb.vcd --stop-time=1000ns
+ghdl -r coordic_recursivo_tb --vcd=coordic_recursivo_tb.vcd --stop-time=2000ns
 gtkwave coordic_recursivo_tb.vcd 
 
 

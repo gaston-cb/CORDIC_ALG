@@ -7,7 +7,7 @@ end sumador_restador_Nbits_tb;
 
 architecture sumador_restador_Nbits_tb_arq of sumador_restador_Nbits_tb is
     constant N_tb:natural :=18 ; 
-    signal a_tb:std_logic_vector(N_tb-1 downto 0):=std_logic_vector(to_signed(-2,N_tb))  ; 
+    signal a_tb:std_logic_vector(N_tb-1 downto 0):=std_logic_vector(to_signed(-10,N_tb))  ; 
     signal b_tb:std_logic_vector(N_tb-1 downto 0):=std_logic_vector(to_signed(-2,N_tb)) ; 
     signal s_tb:std_logic_vector(N_tb-1 downto 0) ; 
     signal sel:std_logic:='0' ; 
