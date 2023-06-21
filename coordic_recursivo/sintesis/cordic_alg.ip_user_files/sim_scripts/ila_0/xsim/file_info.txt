@@ -1,0 +1,1 @@
+ila_0.vhd,vhdl,xil_defaultlib,../../../../cordic_alg.gen/sources_1/ip/ila_0/sim/ila_0.vhd,incdir="../../../../cordic_alg.gen/sources_1/ip/ila_0/hdl/verilog"

@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Tue Jun 20 18:36:04 2023
+# Process ID: 36356
+# Current directory: /home/gvaldez/cordic_clp_final/coordic_tpfinal/coordic_recursivo/sintesis/cordic_alg.runs/synth_1
+# Command line: vivado -log vio_cordic.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source vio_cordic.tcl
+# Log file: /home/gvaldez/cordic_clp_final/coordic_tpfinal/coordic_recursivo/sintesis/cordic_alg.runs/synth_1/vio_cordic.vds
+# Journal file: /home/gvaldez/cordic_clp_final/coordic_tpfinal/coordic_recursivo/sintesis/cordic_alg.runs/synth_1/vivado.jou
+# Running On: DESKTOP-DEBIAN, OS: Linux, CPU Frequency: 1524.849 MHz, CPU Physical cores: 4, Host memory: 7827 MB
+#-----------------------------------------------------------
+source vio_cordic.tcl -notrace

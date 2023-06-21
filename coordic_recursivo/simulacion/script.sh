@@ -14,6 +14,10 @@ ghdl -s ../../sum1bit/fuentes/sumador1bit.vhd ../../sumRestNbits/fuentes/sumador
         ../fuentes/coordic_recursivo_tb.vhd
 ghdl -e coordic_recursivo_tb 
 ghdl -r coordic_recursivo_tb --vcd=coordic_recursivo_tb.vcd --stop-time=2000ns
+cd ../../python_script_fixed_point/
+python3 test_function.py
+cd ../coordic_recursivo/simulacion/
+
 gtkwave coordic_recursivo_tb.vcd 
 
 

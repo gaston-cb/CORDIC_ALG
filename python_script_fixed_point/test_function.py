@@ -2,7 +2,7 @@ from support_functions import coordic
 from support_functions import real2bin 
 from support_functions import bin2real 
 import math 
-
+print("----------------INICIO SCRIPT COMPARACION CORDIC --------------------------")
 
 An = 1 
 for i in range (0,10):
@@ -20,7 +20,7 @@ def file_vhdl_read(name_file):
     vhdl_xn = [] 
     vhdl_yn = [] 
     vhdl_zn = [] 
-    with open(name_file) as f:
+    with open(PATH_FILE) as f:
         lines = f.readlines()
         count_lines = len(lines) 
         condador = 0 
@@ -33,9 +33,7 @@ def file_vhdl_read(name_file):
 
 
 vhdlx,vhdly,vhdlz = file_vhdl_read(PATH_FILE) 
-
-xn,yn,zn = coordic(x0,y0,z0,11)
-print(xn)
+xn,yn,zn = coordic(x0,y0,z0,20)
 print (f'inicial value: {x0},{y0},{z0}')
 with open('compare_cordic_tb.txt','w') as c:
     for i in range(0,len(xn)): 

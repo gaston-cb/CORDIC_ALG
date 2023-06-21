@@ -22,36 +22,41 @@ architecture rtl of coordic_recursivo is
 
     constant iter: natural := 10 ;                -- CANTIDAD DE ITERACIONES -- MATCHEA CON ROM TABLE
     constant nflip_flop_counter: natural := 10 ;  -- CANTIDAD DE ITERACIONES -- MATCHEA CON ROM TABLE
-----  Entrada a los registros de x,y ,z ----------------------
-    signal inputXReg:std_logic_vector(N-1 downto 0) ; --S1
-    signal inputYReg:std_logic_vector(N-1 downto 0) ; --S2
-    signal inputZReg:std_logic_vector(N-1 downto 0) ; --S3
+
 ----------------Entrada al MUXCOORDIC-------------------
     
     signal inputXnmux:std_logic_vector(N-1 downto 0) ; --s10
     signal inputYnmux:std_logic_vector(N-1 downto 0) ; --s11
     signal inputZnmux:std_logic_vector(N-1 downto 0) ; --s12
     signal select_input_mux:std_logic ; --s15
----------------------------------------------------------
+------  ----  Entrada a los registros de x,y ,z ----------------------
+    signal inputXReg:std_logic_vector(N-1 downto 0) ; --S1
+    signal inputYReg:std_logic_vector(N-1 downto 0) ; --S2
+    signal inputZReg:std_logic_vector(N-1 downto 0) ; --S3
 -------Señales del contador -----------------------------
----------------------------------------------------------    
     signal sal_comparador:std_logic_vector(nflip_flop_counter-1 downto 0)  ;--s13
 
 ---------------------- señales entrada de FULL_ADDER DE X---------------
     signal inputXFA:std_logic_vector(N-1 downto 0) ;      --S4 
     signal inputYFASHIFT:std_logic_vector(N-1 downto 0) ; --S7 
     signal carry_out_x:std_logic; 
----------------------- señales entrada de FULL_ADDER DE Y---------------
+    signal select_op_FAX: std_logic ;  
+
+    ---------------------- señales entrada de FULL_ADDER DE Y---------------
     signal inputYFA:std_logic_vector(N-1 downto 0) ;   --S5
     signal inputXFASHIFT:std_logic_vector(N-1 downto 0) ; --S8
-    signal carry_out_y:std_logic; 
+    signal carry_out_y:std_logic;
+    --signal select_op_FAY: std_logic ;  
 ---------------------- señales entrada de FULL_ADDER DE Z---------------
     signal inputZFAROM:std_logic_vector(N-1 downto 0) ; --S9
     signal carry_out_z:std_logic; 
     signal inputZFA:std_logic_vector(N-1 downto 0) ;  --S6 
+    signal select_op_FAZ: std_logic ;  
+
+
     signal FA_select_op:std_logic; 
 
-
+   -- signal delay_rom:std_logic_vector(N-1 downto 0) ; 
     --signal rst_register:std_logic ; 
 ------------------------------------------------------------------------     
 --
@@ -61,9 +66,12 @@ begin
     Xn <= inputXnmux  ;
     Yn <= inputYnmux  ;
     Zn <= inputZnmux  ; 
+    -- select_op_FAX <= not FA_select_op ; 
+    -- select_op_FAZ <= not FA_select_op ; 
+    
    -- rst_register <= not  select_input_mux; 
 -------------------------------MULTIPLEXORES DE ENTRADA ------------------------------------------------------------
-    MUXXIN: entity work.muxInputN
+    MUXX: entity work.muxInputN
         generic map(
             widht_bus_in => N
         )
@@ -74,7 +82,7 @@ begin
             sal => inputXReg
         ); 
 
-    MUXYIN: entity work.muxInputN
+    MUXY: entity work.muxInputN
         generic map(
             widht_bus_in => N
         )
@@ -85,7 +93,7 @@ begin
             sal => inputYReg
         ); 
 
-    MUXZIN: entity work.muxInputN
+    MUXZ: entity work.muxInputN
         generic map(
             widht_bus_in => N
         )
@@ -93,7 +101,7 @@ begin
             sel => select_input_mux, 
             a   => z0,
             b   => inputZnmux,   
-            sal => inputZReg
+            sal => inputZreg
         );
     select_input_mux <= '1' when sal_comparador/= std_logic_vector(to_unsigned(0,nflip_flop_counter)) else '0' ; 
 ----------------------------------------------------------------------------------------------------------------------------
@@ -129,24 +137,27 @@ begin
         )
         port map(
             clk => clk_in, 
-            rst => rst_in , 
+            rst =>  rst_in, 
             ena =>'1', 
-            D => inputZReg,
+            D => inputZreg,
             Q => inputZFA 
         ); 
 
 --------------------------FULL_ADDER_XYZ---------------------------------------------------------------
     FA_select_op <= inputZFA(N-1) ; 
-    FAZ:entity work.sumador_restador_Nbits
+    select_op_FAX <= not FA_select_op ; 
+    select_op_FAZ <= not FA_select_op ; 
+    
+    FAX:entity work.sumador_restador_Nbits
     generic map(
         N=> N
     )
     port map(
-        a_in => inputZFA,
-        b_in => inputZFAROM,
-        sel  => FA_select_op,
-        s_out =>inputZnmux, 
-        c_out => carry_out_z
+        a_in =>inputXFA ,
+        b_in => inputYFASHIFT,
+        sel  => select_op_FAX,
+        s_out =>inputXnmux , 
+        c_out =>carry_out_x
     );
 
     FAY:entity work.sumador_restador_Nbits
@@ -158,18 +169,18 @@ begin
         b_in => inputXFASHIFT,
         sel  => FA_select_op,
         s_out =>inputYnmux, 
-        c_out => carry_out_x
+        c_out =>carry_out_y
     );
-    FAX:entity work.sumador_restador_Nbits
+    FAZ:entity work.sumador_restador_Nbits
     generic map(
         N=> N
     )
     port map(
-        a_in => inputXFA,
-        b_in => inputYFASHIFT,
-        sel  => FA_select_op,
-        s_out =>inputXnmux, 
-        c_out => carry_out_y
+        a_in => inputZFA,
+        b_in => inputZFAROM,
+        sel  => select_op_FAZ,
+        s_out =>inputZnmux, 
+        c_out =>carry_out_z 
     ); 
 
 ------------------------------------shifter N bits ----------------------------------------------
@@ -181,7 +192,7 @@ begin
         port map(
             d =>  inputYFA,
             sel=> sal_comparador, 
-            q=>   inputYFASHIFT
+            q =>  inputYFASHIFT 
         ) ; 
     FAXSHIFT: entity work.barrel_shifter_arit
         generic map(
@@ -189,9 +200,9 @@ begin
             widht_input => N 
         )
         port map(
-            d =>  inputXFA,
-            sel=> sal_comparador, 
-            q=>   inputXFASHIFT
+            d => inputXFA ,
+            sel=>sal_comparador , 
+            q=>  inputXFASHIFT 
         ) ; 
 
 
@@ -213,15 +224,15 @@ begin
     
     
 ------------------------Memoria ROM ----------------------------------------------------
+ 
     LOOKUP_TABLE:entity work.memoria_rom
-        generic map(
+    generic map(
             data_width  => N, 
             addr_length => nflip_flop_counter
-        )
+            )
         port map(
-            clk => clk_in, 
             address => sal_comparador, 
-            data_out=>inputZFAROM 
+            data_out=> inputZFAROM 
         ); 
 -----------------------------------------------------------------------------------------------
 

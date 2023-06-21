@@ -1,0 +1,380 @@
+
+*** Running vivado
+    with args -log vio_cordic.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source vio_cordic.tcl
+
+
+****** Vivado v2023.1 (64-bit)
+  **** SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
+  **** IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+  **** SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source vio_cordic.tcl -notrace
+create_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1327.422 ; gain = 0.023 ; free physical = 2663 ; free virtual = 5773
+Command: read_checkpoint -auto_incremental -incremental /home/gvaldez/cordic_clp_final/coordic_tpfinal/coordic_recursivo/sintesis/cordic_alg.srcs/utils_1/imports/synth_1/coordic_recursivo.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from /home/gvaldez/cordic_clp_final/coordic_tpfinal/coordic_recursivo/sintesis/cordic_alg.srcs/utils_1/imports/synth_1/coordic_recursivo.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top vio_cordic -part xc7z020clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 37959
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2035.754 ; gain = 377.770 ; free physical = 1653 ; free virtual = 4799
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'vio_cordic' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/coordic_recursivo/fuentes/coordic_recursivo_vio.vhd:12]
+INFO: [Synth 8-3491] module 'vio_0' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/coordic_recursivo/sintesis/cordic_alg.runs/synth_1/.Xil/Vivado-36356-DESKTOP-DEBIAN/realtime/vio_0_stub.vhdl:6' bound to instance 'inst_vio0' of component 'vio_0' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/coordic_recursivo/fuentes/coordic_recursivo_vio.vhd:51]
+INFO: [Synth 8-638] synthesizing module 'vio_0' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/coordic_recursivo/sintesis/cordic_alg.runs/synth_1/.Xil/Vivado-36356-DESKTOP-DEBIAN/realtime/vio_0_stub.vhdl:19]
+	Parameter N bound to: 18 - type: integer 
+INFO: [Synth 8-3491] module 'coordic_recursivo' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/coordic_recursivo/fuentes/coordic_recursivo.vhd:5' bound to instance 'coor_inst' of component 'coordic_recursivo' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/coordic_recursivo/fuentes/coordic_recursivo_vio.vhd:61]
+INFO: [Synth 8-638] synthesizing module 'coordic_recursivo' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/coordic_recursivo/fuentes/coordic_recursivo.vhd:21]
+	Parameter N bound to: 18 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'muxInputN' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/muxInputN/fuentes/muxInputN.vhd:17]
+	Parameter widht_bus_in bound to: 18 - type: integer 
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUXNBITS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/muxInputN/fuentes/muxInputN.vhd:31]
+INFO: [Synth 8-638] synthesizing module 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:14]
+INFO: [Synth 8-256] done synthesizing module 'mux2x1' (0#1) [/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:14]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUXNBITS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/muxInputN/fuentes/muxInputN.vhd:31]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUXNBITS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/muxInputN/fuentes/muxInputN.vhd:31]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUXNBITS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/muxInputN/fuentes/muxInputN.vhd:31]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUXNBITS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/muxInputN/fuentes/muxInputN.vhd:31]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUXNBITS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/muxInputN/fuentes/muxInputN.vhd:31]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUXNBITS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/muxInputN/fuentes/muxInputN.vhd:31]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUXNBITS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/muxInputN/fuentes/muxInputN.vhd:31]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUXNBITS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/muxInputN/fuentes/muxInputN.vhd:31]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUXNBITS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/muxInputN/fuentes/muxInputN.vhd:31]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUXNBITS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/muxInputN/fuentes/muxInputN.vhd:31]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUXNBITS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/muxInputN/fuentes/muxInputN.vhd:31]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUXNBITS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/muxInputN/fuentes/muxInputN.vhd:31]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUXNBITS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/muxInputN/fuentes/muxInputN.vhd:31]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUXNBITS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/muxInputN/fuentes/muxInputN.vhd:31]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUXNBITS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/muxInputN/fuentes/muxInputN.vhd:31]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUXNBITS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/muxInputN/fuentes/muxInputN.vhd:31]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUXNBITS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/muxInputN/fuentes/muxInputN.vhd:31]
+INFO: [Synth 8-256] done synthesizing module 'muxInputN' (0#1) [/home/gvaldez/cordic_clp_final/coordic_tpfinal/muxInputN/fuentes/muxInputN.vhd:17]
+INFO: [Synth 8-638] synthesizing module 'registroPPNbits' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/registroN/fuentes/registroPPNbits.vhd:18]
+	Parameter N bound to: 18 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'registroPPNbits' (0#1) [/home/gvaldez/cordic_clp_final/coordic_tpfinal/registroN/fuentes/registroPPNbits.vhd:18]
+INFO: [Synth 8-638] synthesizing module 'sumador_restador_Nbits' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/sumRestNbits/fuentes/sumador_restador_Nbits.vhd:19]
+	Parameter N bound to: 18 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'sumador1bit' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/sum1bit/fuentes/sumador1bit.vhd:15]
+INFO: [Synth 8-256] done synthesizing module 'sumador1bit' (0#1) [/home/gvaldez/cordic_clp_final/coordic_tpfinal/sum1bit/fuentes/sumador1bit.vhd:15]
+INFO: [Synth 8-256] done synthesizing module 'sumador_restador_Nbits' (0#1) [/home/gvaldez/cordic_clp_final/coordic_tpfinal/sumRestNbits/fuentes/sumador_restador_Nbits.vhd:19]
+INFO: [Synth 8-638] synthesizing module 'barrel_shifter_arit' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:21]
+	Parameter stages bound to: 11 - type: integer 
+	Parameter widht_input bound to: 18 - type: integer 
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:42]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:42]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:42]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:42]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:42]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:42]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:42]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:42]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:42]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:42]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:42]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:42]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:42]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:42]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:42]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:42]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:42]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:42]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:42]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS_1' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:52]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:42]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:42]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:42]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:42]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:42]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:42]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:42]
+INFO: [Synth 8-3491] module 'mux2x1' declared at '/home/gvaldez/cordic_clp_final/coordic_tpfinal/mux2x1/fuentes/mux2x1.vhd:5' bound to instance 'MUX_PORTS' of component 'mux2x1' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:42]
+INFO: [Common 17-14] Message 'Synth 8-3491' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-256] done synthesizing module 'barrel_shifter_arit' (0#1) [/home/gvaldez/cordic_clp_final/coordic_tpfinal/barrel_shifter_arit/fuentes/barrel_shifter_arit.vhd:21]
+INFO: [Synth 8-638] synthesizing module 'countNmodMbit' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/countNmodMbit/fuentes/countNmodMbit.vhd:19]
+	Parameter N bound to: 11 - type: integer 
+	Parameter M bound to: 11 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'registroPPNbits__parameterized0' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/registroN/fuentes/registroPPNbits.vhd:18]
+	Parameter N bound to: 11 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'registroPPNbits__parameterized0' (0#1) [/home/gvaldez/cordic_clp_final/coordic_tpfinal/registroN/fuentes/registroPPNbits.vhd:18]
+INFO: [Synth 8-256] done synthesizing module 'countNmodMbit' (0#1) [/home/gvaldez/cordic_clp_final/coordic_tpfinal/countNmodMbit/fuentes/countNmodMbit.vhd:19]
+INFO: [Synth 8-638] synthesizing module 'memoria_rom' [/home/gvaldez/cordic_clp_final/coordic_tpfinal/memoria_rom/fuentes/memoria_rom.vhd:16]
+	Parameter data_width bound to: 18 - type: integer 
+	Parameter addr_length bound to: 11 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'memoria_rom' (0#1) [/home/gvaldez/cordic_clp_final/coordic_tpfinal/memoria_rom/fuentes/memoria_rom.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'coordic_recursivo' (0#1) [/home/gvaldez/cordic_clp_final/coordic_tpfinal/coordic_recursivo/fuentes/coordic_recursivo.vhd:21]
+INFO: [Synth 8-256] done synthesizing module 'vio_cordic' (0#1) [/home/gvaldez/cordic_clp_final/coordic_tpfinal/coordic_recursivo/fuentes/coordic_recursivo_vio.vhd:12]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'coor_inst'. This will prevent further optimization [/home/gvaldez/cordic_clp_final/coordic_tpfinal/coordic_recursivo/fuentes/coordic_recursivo_vio.vhd:61]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2108.723 ; gain = 450.738 ; free physical = 1563 ; free virtual = 4712
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 2123.566 ; gain = 465.582 ; free physical = 1551 ; free virtual = 4700
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 2123.566 ; gain = 465.582 ; free physical = 1551 ; free virtual = 4700
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2123.566 ; gain = 0.000 ; free physical = 1551 ; free virtual = 4700
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/gvaldez/cordic_clp_final/coordic_tpfinal/coordic_recursivo/sintesis/cordic_alg.gen/sources_1/ip/vio_0/vio_0/vio_0_in_context.xdc] for cell 'inst_vio0'
+Finished Parsing XDC File [/home/gvaldez/cordic_clp_final/coordic_tpfinal/coordic_recursivo/sintesis/cordic_alg.gen/sources_1/ip/vio_0/vio_0/vio_0_in_context.xdc] for cell 'inst_vio0'
+Parsing XDC File [/home/gvaldez/cordic_clp_final/coordic_tpfinal/coordic_recursivo/fuentes/PYNQ-Z2 v1.0.xdc]
+Finished Parsing XDC File [/home/gvaldez/cordic_clp_final/coordic_tpfinal/coordic_recursivo/fuentes/PYNQ-Z2 v1.0.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/gvaldez/cordic_clp_final/coordic_tpfinal/coordic_recursivo/fuentes/PYNQ-Z2 v1.0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/vio_cordic_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/vio_cordic_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2232.363 ; gain = 0.000 ; free physical = 1466 ; free virtual = 4630
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2232.363 ; gain = 0.000 ; free physical = 1466 ; free virtual = 4630
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 2232.363 ; gain = 574.379 ; free physical = 1465 ; free virtual = 4630
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 2232.363 ; gain = 574.379 ; free physical = 1466 ; free virtual = 4630
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for inst_vio0. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 2232.363 ; gain = 574.379 ; free physical = 1466 ; free virtual = 4630
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 2232.363 ; gain = 574.379 ; free physical = 1464 ; free virtual = 4629
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   11 Bit       Adders := 1     
++---XORs : 
+	   3 Input      1 Bit         XORs := 54    
+	   2 Input      1 Bit         XORs := 54    
++---Registers : 
+	               18 Bit    Registers := 3     
+	               11 Bit    Registers := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 2232.363 ; gain = 574.379 ; free physical = 1457 ; free virtual = 4628
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++------------+------------+---------------+----------------+
+|Module Name | RTL Object | Depth x Width | Implemented As | 
++------------+------------+---------------+----------------+
+|memoria_rom | mem[2047]  | 2048x16       | LUT            | 
++------------+------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:49 ; elapsed = 00:00:52 . Memory (MB): peak = 2232.363 ; gain = 574.379 ; free physical = 1449 ; free virtual = 4628
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:49 ; elapsed = 00:00:52 . Memory (MB): peak = 2232.363 ; gain = 574.379 ; free physical = 1449 ; free virtual = 4628
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:50 ; elapsed = 00:00:52 . Memory (MB): peak = 2232.363 ; gain = 574.379 ; free physical = 1449 ; free virtual = 4627
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:58 ; elapsed = 00:01:00 . Memory (MB): peak = 2232.363 ; gain = 574.379 ; free physical = 1447 ; free virtual = 4626
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:58 ; elapsed = 00:01:00 . Memory (MB): peak = 2232.363 ; gain = 574.379 ; free physical = 1447 ; free virtual = 4626
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:58 ; elapsed = 00:01:00 . Memory (MB): peak = 2232.363 ; gain = 574.379 ; free physical = 1447 ; free virtual = 4626
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:58 ; elapsed = 00:01:00 . Memory (MB): peak = 2232.363 ; gain = 574.379 ; free physical = 1447 ; free virtual = 4626
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:58 ; elapsed = 00:01:00 . Memory (MB): peak = 2232.363 ; gain = 574.379 ; free physical = 1447 ; free virtual = 4626
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:58 ; elapsed = 00:01:00 . Memory (MB): peak = 2232.363 ; gain = 574.379 ; free physical = 1447 ; free virtual = 4626
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |vio_0         |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+-----------+------+
+|      |Cell       |Count |
++------+-----------+------+
+|1     |vio_0_bbox |     1|
+|2     |BUFG       |     1|
+|3     |LUT1       |     1|
+|4     |LUT2       |    20|
+|5     |LUT3       |    70|
+|6     |LUT4       |    14|
+|7     |LUT5       |   114|
+|8     |LUT6       |   119|
+|9     |FDRE       |    65|
+|10    |IBUF       |     2|
++------+-----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:58 ; elapsed = 00:01:00 . Memory (MB): peak = 2232.363 ; gain = 574.379 ; free physical = 1447 ; free virtual = 4626
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:55 ; elapsed = 00:00:57 . Memory (MB): peak = 2232.363 ; gain = 465.582 ; free physical = 1447 ; free virtual = 4625
+Synthesis Optimization Complete : Time (s): cpu = 00:00:58 ; elapsed = 00:01:00 . Memory (MB): peak = 2232.371 ; gain = 574.379 ; free physical = 1447 ; free virtual = 4625
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2232.371 ; gain = 0.000 ; free physical = 1447 ; free virtual = 4625
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2232.371 ; gain = 0.000 ; free physical = 1709 ; free virtual = 4888
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: ef3f56d8
+INFO: [Common 17-83] Releasing license: Synthesis
+144 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:08 ; elapsed = 00:01:10 . Memory (MB): peak = 2232.371 ; gain = 904.949 ; free physical = 1709 ; free virtual = 4888
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1852.785; main = 1537.584; forked = 363.752
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3192.988; main = 2232.363; forked = 960.625
+INFO: [Common 17-1381] The checkpoint '/home/gvaldez/cordic_clp_final/coordic_tpfinal/coordic_recursivo/sintesis/cordic_alg.runs/synth_1/vio_cordic.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file vio_cordic_utilization_synth.rpt -pb vio_cordic_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Jun 20 18:37:32 2023...

@@ -18,20 +18,20 @@ architecture memoria_rom_tb_arq of memoria_rom_tb is
 begin
 
     clk <= not clk after 10 ns;
-    address_tb <= std_logic_vector(to_unsigned(0,size_memory)) after 40 ns, 
-                std_logic_vector(to_unsigned(1,size_memory)) after   80 ns, 
-                std_logic_vector(to_unsigned(2,size_memory)) after  120 ns,
-                std_logic_vector(to_unsigned(3,size_memory)) after  160 ns,
-                std_logic_vector(to_unsigned(4,size_memory)) after  200 ns,
-                std_logic_vector(to_unsigned(5,size_memory)) after  240 ns,
-                std_logic_vector(to_unsigned(6,size_memory)) after  280 ns,
-                std_logic_vector(to_unsigned(7,size_memory)) after  320 ns,
-                std_logic_vector(to_unsigned(8,size_memory)) after  360 ns,
-                std_logic_vector(to_unsigned(9,size_memory)) after  400 ns,
-                std_logic_vector(to_unsigned(10,size_memory)) after 440 ns,
-                std_logic_vector(to_unsigned(11,size_memory)) after 480 ns,
-                std_logic_vector(to_unsigned(12,size_memory)) after 520 ns;
-                 
+     address_tb <= std_logic_vector(to_unsigned(0,size_memory)) after 40 ns, 
+                 std_logic_vector(to_unsigned(1,size_memory)) after   80 ns, 
+                 std_logic_vector(to_unsigned(2,size_memory)) after  120 ns,
+                 std_logic_vector(to_unsigned(3,size_memory)) after  160 ns,
+                 std_logic_vector(to_unsigned(4,size_memory)) after  200 ns,
+                 std_logic_vector(to_unsigned(5,size_memory)) after  240 ns,
+                 std_logic_vector(to_unsigned(6,size_memory)) after  280 ns,
+                 std_logic_vector(to_unsigned(7,size_memory)) after  320 ns,
+                 std_logic_vector(to_unsigned(8,size_memory)) after  360 ns,
+                 std_logic_vector(to_unsigned(9,size_memory)) after  400 ns,
+                 std_logic_vector(to_unsigned(10,size_memory)) after 440 ns,
+                 std_logic_vector(to_unsigned(11,size_memory)) after 480 ns,
+                 std_logic_vector(to_unsigned(12,size_memory)) after 520 ns;
+    
 
     DUT : entity work.memoria_rom
     generic map(
@@ -39,8 +39,7 @@ begin
         addr_length => size_memory
     )
     port map (
-        clk  =>clk,
-        address =>address_tb,
+        address => address_tb,
         data_out => q_out_tb
         
     );
