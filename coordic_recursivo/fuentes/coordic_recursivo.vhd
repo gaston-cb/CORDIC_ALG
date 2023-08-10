@@ -217,7 +217,7 @@ begin
         )
         port map(
             clk_in => clk_in,
-            ena_in => '1', 
+            ena_in => '1', --enable a input signal of uc 
             rst_in => rst_in, 
             q_out  => sal_comparador 
         ); 

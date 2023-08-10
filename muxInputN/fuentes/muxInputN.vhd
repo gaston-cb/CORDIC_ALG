@@ -7,7 +7,7 @@ entity muxInputN is
         widht_bus_in: natural:=4 
     ); 
     port (
-        sel:in std_logic ; 
+        sel:in std_logic ;  --0 -> load value, 1 init a algorithm
         a: in std_logic_vector(widht_bus_in-1 downto 0);  
         b: in std_logic_vector(widht_bus_in-1 downto 0); 
         sal: out std_logic_vector(widht_bus_in-1 downto 0) 

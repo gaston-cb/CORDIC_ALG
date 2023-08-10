@@ -83,6 +83,6 @@ def bin2real(binnumber):
 
     if (negative ==True): 
         inverse_transform = -1*inverse_transform
-    return str(inverse_transform)  
+    return (float(inverse_transform))  
 
 

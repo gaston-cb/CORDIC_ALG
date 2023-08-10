@@ -37,5 +37,4 @@ xn,yn,zn = coordic(x0,y0,z0,20)
 print (f'inicial value: {x0},{y0},{z0}')
 with open('compare_cordic_tb.txt','w') as c:
     for i in range(0,len(xn)): 
-        c.write(f'{i}: {bin2real(vhdlx[i])}  {xn[i]} {bin2real(vhdly[i])}  {yn[i]}  {bin2real(vhdlz[i])}  {zn[i]} \n')
-#     {bin2real(vhdly[i])} {bin2real(vhdlz[i])}
+        c.write(f'{i}: {bin2real(vhdlx[i]):.15f}  {xn[i]:.15f} {bin2real(vhdly[i]):.15f}  {yn[i]:.15f}  {bin2real(vhdlz[i]):.15f}  {zn[i]:.15f} \n')
