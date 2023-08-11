@@ -7,20 +7,20 @@ entity control_logic is
         N : natural :=4 
     );
     port (
-        clk_in     : in std_logic ;
-        start_i : in std_logic ; --inout preguntar 
+        clk_in        : in std_logic ;
+        start_i       : in std_logic ; --inout preguntar 
         input_counter : in std_logic_vector(N-1 downto 0) ;        
-        end_iter: out std_logic    ; 
-        ena_counter: out std_logic ; 
-        rst_counter: out std_logic ; 
-        load_port: out std_logic 
+        end_iter      : out std_logic    ; 
+        ena_counter   : out std_logic ; 
+        rst_counter   : out std_logic ; 
+        load_port     : out std_logic 
         );
 end control_logic;
 
 architecture control_logic_arq of control_logic is
     constant iter:natural :=12 ; 
     type fsm_control is (LOAD_INITIAL,COMPUTE,END_ITERa) ; 
-    signal fsm_is: fsm_control ;--:=END_ITERa;
+    signal fsm_is: fsm_control ;    --:=END_ITERa;
     signal s1,s2: std_logic ; 
     signal s3 : std_logic_vector(N-1 downto 0) ;     
 begin
@@ -42,25 +42,28 @@ begin
 
     process (clk_in)
         begin 
-            if start_i = '1' then 
-                fsm_is <= LOAD_INITIAL  ; 
-                load_port <= '0'; 
-            elsif input_counter = std_logic_vector(to_unsigned(0,N)) then 
-                ena_counter <='0' ; 
-                fsm_is <= END_ITERa ;
-            end if ;  
-
+            if rising_edge(clk_in) then 
+                if start_i = '1' then 
+                    --fsm_is <= LOAD_INITIAL  ; 
+                    load_port <= '0'; 
+                elsif input_counter = std_logic_vector(to_unsigned(0,N)) then 
+                    ena_counter <='0' ; 
+                    fsm_is <= END_ITERa ;
+                end if ;  
+            end if; 
     end process; 
 
-    TRANSICIONES:process (fsm_is)
-        begin 
-            if fsm_is = LOAD_INITIAL then 
-                fsm_is <= COMPUTE;
-                ena_counter <= '1' ;   
-            elsif fsm_is = COMPUTE then 
-                fsm_is <= END_ITERa; 
-            elsif fsm_is = END_ITERa then    
-                fsm_is <= LOAD_INITIAL ; 
-            end if ;      
-        end process; 
+    -- TRANSICIONES:process (fsm_is)
+    --     variable news: fsm_control ; 
+    --     begin 
+    --         if fsm_is = LOAD_INITIAL then 
+    --             news := COMPUTE;
+    --             ena_counter <= '1' ;   
+    --         elsif fsm_is = COMPUTE then 
+    --             news := END_ITERa; 
+    --             fsm_is <= news ; 
+    --         elsif fsm_is = END_ITERa then    
+    --             news := LOAD_INITIAL ; 
+    --         end if ;      
+    --     end process; 
 end architecture;
